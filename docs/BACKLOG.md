@@ -6,24 +6,27 @@ Calendrier de référence : `SPEC.md` §11. Ordre de coupe en cas de retard : `S
 ## Jour 1 — Cadrage
 - [x] Dépôt public autonome créé (indépendant du site Rock-Eval)
 - [x] `SPEC.md` ajouté
-- [ ] `CLAUDE.md` ajouté
-- [ ] `docs/BACKLOG.md` et `docs/SOURCES.md` ajoutés
-- [ ] Périmètre P0 gelé ; aucune formule non sourcée implémentée
+- [x] `CLAUDE.md` ajouté
+- [x] `docs/BACKLOG.md` et `docs/SOURCES.md` ajoutés
+- [x] Périmètre P0 gelé ; aucune formule non sourcée implémentée
 
 ## Jour 2 — Squelette et Pages
-- [ ] Vite + React + TypeScript initialisés
-- [ ] Scripts `lint`, `test`, `build` fonctionnent
-- [ ] `HashRouter` ; `base` = `/EngiSim-Lab/`
-- [ ] Workflow GitHub Actions de déploiement
-- [ ] Page minimale visible sur l'URL GitHub Pages ; rechargement OK
+- [x] Vite + React + TypeScript initialisés
+- [x] Scripts `lint`, `test`, `build` fonctionnent
+- [x] `HashRouter` ; `base` = `/EngiSim-Lab/`
+- [x] Workflow GitHub Actions de déploiement
+- [x] Page minimale visible sur l'URL GitHub Pages ; rechargement OK
 
 ## Jour 3 — Catalogue
 - [ ] Registre `src/catalog/simulators.ts` (source de vérité)
 - [ ] Navigation, cartes par domaine, recherche, filtres, état vide
 - [ ] Statuts « Disponible / Prototype / À venir » ; aucun lien cassé
+- [ ] Tests du registre et de la recherche au vert
+- Dette connue : libellés de l'interface en français « en dur » jusqu'au Jour 4 (dictionnaires FR/EN)
 
 ## Jour 4 — FR/EN et thèmes
 - [ ] Dictionnaires `fr.json` / `en.json` + test de complétude
+- [ ] Libellés du Jour 3 déplacés dans les dictionnaires
 - [ ] Thème clair/sombre (préférence système), couleur d'accent, mémorisation
 - [ ] Clavier et mobile vérifiés sur les contrôles communs
 
@@ -35,6 +38,7 @@ Calendrier de référence : `SPEC.md` §11. Ordre de coupe en cas de retard : `S
 - [ ] HI, OI, PI, S2/S3 optionnel
 - [ ] Cas imposé : HI = 400, OI = 50, PI ≈ 0,0588235
 - [ ] Rejet des valeurs négatives, non numériques, infinies ; TOC nul → HI/OI non calculables ; S1+S2 = 0 → PI indéfini
+- [ ] Suppression du test de fumée `src/smoke.test.ts`
 
 ## Jour 7 — Import CSV Rock-Eval
 - [ ] Aperçu, mapping manuel des colonnes, confirmation des unités
@@ -68,6 +72,7 @@ Calendrier de référence : `SPEC.md` §11. Ordre de coupe en cas de retard : `S
 
 ## Jour 13 — Recette technique
 - [ ] Build propre ; routes Pages ; langues ; thèmes ; mobile ; clavier ; données invalides
+- [ ] Licences des dépendances renseignées dans `docs/SOURCES.md`
 
 ## Jour 14 — Alpha v0.1
 - [ ] README (limites), licence, roadmap ; version taguée
