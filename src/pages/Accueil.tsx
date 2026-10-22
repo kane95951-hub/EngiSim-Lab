@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { usePreferences } from '../app/preferences-context'
 import { SIMULATORS } from '../catalog/simulators'
 import type { Status } from '../catalog/types'
 
@@ -7,30 +8,30 @@ function countByStatus(status: Status): number {
 }
 
 export default function Accueil() {
+  const { t } = usePreferences()
   return (
     <main>
       <h1>EngiSim Lab</h1>
+      <p>{t('home.intro')}</p>
       <p>
-        Atelier de simulation et de calcul pour l’ingénierie : on y saisit des données, on exécute
-        un modèle, on compare des scénarios et on lit une interprétation prudente, avec ses
-        sources et ses limites.
+        {t('home.catalogState', {
+          available: countByStatus('available'),
+          prototype: countByStatus('prototype'),
+          planned: countByStatus('planned'),
+        })}{' '}
+        {t('home.plannedNote')}
       </p>
       <p>
-        État du catalogue : {countByStatus('available')} outil(s) disponible(s),{' '}
-        {countByStatus('prototype')} prototype(s), {countByStatus('planned')} à venir. Les outils
-        à venir n’effectuent aucun calcul.
+        <Link to="/explorer">{t('home.exploreLink')}</Link>
       </p>
       <p>
-        <Link to="/explorer">Explorer les simulateurs</Link>
-      </p>
-      <p>
-        Ressource externe, projet distinct :{' '}
+        {t('home.externalIntro')}{' '}
         <a
           href="https://kane95951-hub.github.io/Rock-Eval-Simulator/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          simulateur Rock-Eval existant
+          {t('home.externalLink')}
         </a>
         .
       </p>

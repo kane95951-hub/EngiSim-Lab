@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { STATUS_LABELS_FR } from '../catalog/labels'
+import { usePreferences } from '../app/preferences-context'
+import { STATUS_KEYS } from '../catalog/labels'
 import { filterSimulators } from '../catalog/search'
 import { DOMAINS, SIMULATORS } from '../catalog/simulators'
 import type { Domain, Status } from '../catalog/types'
@@ -9,6 +10,7 @@ import StatusBadge from '../components/catalog/StatusBadge'
 const STATUSES: Status[] = ['available', 'prototype', 'planned']
 
 export default function Catalogue() {
+  const { language, t } = usePreferences()
   const [query, setQuery] = useState('')
   const [domain, setDomain] = useState<Domain | 'all'>('all')
   const [status, setStatus] = useState<Status | 'all'>('all')
@@ -26,57 +28,55 @@ export default function Catalogue() {
 
   return (
     <main>
-      <h1>Explorer les simulateurs</h1>
+      <h1>{t('catalog.title')}</h1>
 
       <div className="filters">
         <label>
-          Recherche
+          {t('catalog.search')}
           <input
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Nom, mot-clé, variable…"
+            placeholder={t('catalog.searchPlaceholder')}
           />
         </label>
         <label>
-          Domaine
+          {t('catalog.domain')}
           <select
             value={domain}
             onChange={(event) => setDomain(event.target.value as Domain | 'all')}
           >
-            <option value="all">Tous les domaines</option>
+            <option value="all">{t('catalog.allDomains')}</option>
             {DOMAINS.map((d) => (
               <option key={d.id} value={d.id}>
-                {d.name.fr}
+                {d.name[language]}
               </option>
             ))}
           </select>
         </label>
         <label>
-          Disponibilité
+          {t('catalog.status')}
           <select
             value={status}
             onChange={(event) => setStatus(event.target.value as Status | 'all')}
           >
-            <option value="all">Toutes</option>
+            <option value="all">{t('catalog.allStatuses')}</option>
             {STATUSES.map((s) => (
               <option key={s} value={s}>
-                {STATUS_LABELS_FR[s]}
+                {t(STATUS_KEYS[s])}
               </option>
             ))}
           </select>
         </label>
       </div>
 
-      <p role="status">
-        {results.length} outil(s) affiché(s) sur {SIMULATORS.length}
-      </p>
+      <p role="status">{t('catalog.count', { count: results.length, total: SIMULATORS.length })}</p>
 
       {results.length === 0 ? (
         <div className="notice">
-          <p>Aucun outil ne correspond à votre recherche.</p>
+          <p>{t('catalog.empty')}</p>
           <button type="button" onClick={resetFilters}>
-            Réinitialiser les filtres
+            {t('catalog.reset')}
           </button>
         </div>
       ) : (
@@ -86,13 +86,13 @@ export default function Catalogue() {
             return (
               <li key={simulator.id} className="tool-card">
                 <h2>
-                  <Link to={`/outil/${simulator.id}`}>{simulator.name.fr}</Link>
+                  <Link to={`/outil/${simulator.id}`}>{simulator.name[language]}</Link>
                 </h2>
                 <p>
                   <StatusBadge status={simulator.status} />
                 </p>
-                <p>{simulator.description.fr}</p>
-                <p className="muted">{domainInfo?.name.fr}</p>
+                <p>{simulator.description[language]}</p>
+                <p className="muted">{domainInfo?.name[language]}</p>
               </li>
             )
           })}

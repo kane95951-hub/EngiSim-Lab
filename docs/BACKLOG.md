@@ -18,17 +18,19 @@ Calendrier de référence : `SPEC.md` §11. Ordre de coupe en cas de retard : `S
 - [x] Page minimale visible sur l'URL GitHub Pages ; rechargement OK
 
 ## Jour 3 — Catalogue
-- [ ] Registre `src/catalog/simulators.ts` (source de vérité)
-- [ ] Navigation, cartes par domaine, recherche, filtres, état vide
-- [ ] Statuts « Disponible / Prototype / À venir » ; aucun lien cassé
-- [ ] Tests du registre et de la recherche au vert
-- Dette connue : libellés de l'interface en français « en dur » jusqu'au Jour 4 (dictionnaires FR/EN)
+- [x] Registre `src/catalog/simulators.ts` (source de vérité)
+- [x] Navigation, cartes par domaine, recherche, filtres, état vide
+- [x] Statuts « Disponible / Prototype / À venir » ; aucun lien cassé
+- [x] Tests du registre et de la recherche au vert
+- Dette du Jour 3 soldée au Jour 4 : libellés déplacés dans les dictionnaires FR/EN
 
 ## Jour 4 — FR/EN et thèmes
-- [ ] Dictionnaires `fr.json` / `en.json` + test de complétude
-- [ ] Libellés du Jour 3 déplacés dans les dictionnaires
-- [ ] Thème clair/sombre (préférence système), couleur d'accent, mémorisation
+- [ ] Dictionnaires `fr.ts` / `en.ts` (clés identiques) + test de complétude (ADR-10)
+- [ ] Tous les libellés du Jour 3 traduits ; changement de langue immédiat, langue mémorisée
+- [ ] Thème clair / sombre / système, couleur d'accent (ADR-11), préférences mémorisées
+- [ ] Page Paramètres ; sélecteur de langue dans l'en-tête
 - [ ] Clavier et mobile vérifiés sur les contrôles communs
+- À faire plus tard : page « Mes travaux » (Jour 11), mesure des contrastes d'accent (Jour 13)
 
 ## Jour 5 — Gabarit scientifique
 - [ ] Gabarit de dossier (meta, model, tests, interprétation, ui, fiches)
@@ -73,6 +75,7 @@ Calendrier de référence : `SPEC.md` §11. Ordre de coupe en cas de retard : `S
 ## Jour 13 — Recette technique
 - [ ] Build propre ; routes Pages ; langues ; thèmes ; mobile ; clavier ; données invalides
 - [ ] Licences des dépendances renseignées dans `docs/SOURCES.md`
+- [ ] Contrastes des couleurs d'accent mesurés (clair et sombre)
 
 ## Jour 14 — Alpha v0.1
 - [ ] README (limites), licence, roadmap ; version taguée

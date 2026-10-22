@@ -1,0 +1,65 @@
+import type { MessageKey } from './fr'
+
+// Le type Record<MessageKey, string> impose les mêmes clés que le dictionnaire français :
+// une clé manquante ou en trop empêche la compilation.
+export const en: Record<MessageKey, string> = {
+  'app.title': 'EngiSim Lab — simulation and calculation workshop',
+  'nav.aria': 'Main navigation',
+  'nav.home': 'Home',
+  'nav.explore': 'Explore simulators',
+  'nav.settings': 'Settings',
+  'nav.about': 'About',
+  'lang.switcher': 'Language',
+  'footer.disclaimer':
+    'Educational and exploratory workshop: results do not replace a measurement, an independent validation, certified software, or the advice of a qualified engineer.',
+  'footer.fullDisclaimer': 'Full disclaimer',
+  'home.intro':
+    'A simulation and calculation workshop for engineering: enter data, run a model, compare scenarios and read a cautious interpretation, with its sources and limits.',
+  'home.catalogState':
+    'Catalog status — Available: {available} · Prototypes: {prototype} · Coming soon: {planned}.',
+  'home.plannedNote': 'Tools marked as coming soon perform no calculation.',
+  'home.exploreLink': 'Explore simulators',
+  'home.externalIntro': 'External resource, separate project:',
+  'home.externalLink': 'existing Rock-Eval simulator',
+  'catalog.title': 'Explore simulators',
+  'catalog.search': 'Search',
+  'catalog.searchPlaceholder': 'Name, keyword, variable…',
+  'catalog.domain': 'Domain',
+  'catalog.allDomains': 'All domains',
+  'catalog.status': 'Availability',
+  'catalog.allStatuses': 'All',
+  'catalog.count': 'Tools shown: {count} of {total}',
+  'catalog.empty': 'No tool matches your search.',
+  'catalog.reset': 'Reset filters',
+  'tool.notFoundTitle': 'Tool not found',
+  'tool.notFoundText': 'This tool does not exist in the catalog.',
+  'tool.backToCatalog': 'Back to the catalog',
+  'tool.plannedNotice':
+    'This tool is not available yet. No calculation or result is offered for now.',
+  'tool.prototypeNotice': 'This tool is a prototype: its results are not validated yet.',
+  'status.available': 'Available',
+  'status.prototype': 'Prototype',
+  'status.planned': 'Coming soon',
+  'about.title': 'About',
+  'about.disclaimer':
+    'EngiSim Lab is a simulation and calculation workshop for educational and exploratory purposes. Results depend on the assumptions, the data and the validity domain of each model. They do not replace experimental measurement, independent validation, certified software, or the advice of a qualified engineer.',
+  'about.backHome': 'Back to home',
+  'notFound.title': 'Page not found',
+  'notFound.text': 'The requested address does not exist in EngiSim Lab.',
+  'notFound.backHome': 'Back to home',
+  'settings.title': 'Settings',
+  'settings.language': 'Language',
+  'settings.theme': 'Theme',
+  'settings.themeSystem': 'Follow the system',
+  'settings.themeLight': 'Light',
+  'settings.themeDark': 'Dark',
+  'settings.accent': 'Accent color',
+  'settings.accent.blue': 'Blue',
+  'settings.accent.teal': 'Teal',
+  'settings.accent.green': 'Green',
+  'settings.accent.orange': 'Orange',
+  'settings.accent.purple': 'Purple',
+  'settings.accent.rose': 'Rose',
+  'settings.storageNote':
+    'Your preferences are stored only in this browser, on this device. They are not synchronized.',
+}

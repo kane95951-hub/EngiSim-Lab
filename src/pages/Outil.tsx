@@ -1,17 +1,19 @@
 import { Link, useParams } from 'react-router-dom'
+import { usePreferences } from '../app/preferences-context'
 import { DOMAINS, SIMULATORS } from '../catalog/simulators'
 import StatusBadge from '../components/catalog/StatusBadge'
 
 export default function Outil() {
   const { id } = useParams()
+  const { language, t } = usePreferences()
   const simulator = SIMULATORS.find((s) => s.id === id)
 
   if (!simulator) {
     return (
       <main>
-        <h1>Outil introuvable</h1>
-        <p>Cet outil n’existe pas dans le catalogue.</p>
-        <Link to="/explorer">Retour au catalogue</Link>
+        <h1>{t('tool.notFoundTitle')}</h1>
+        <p>{t('tool.notFoundText')}</p>
+        <Link to="/explorer">{t('tool.backToCatalog')}</Link>
       </main>
     )
   }
@@ -21,22 +23,21 @@ export default function Outil() {
   return (
     <main>
       <p>
-        <Link to="/explorer">← Retour au catalogue</Link>
+        <Link to="/explorer">← {t('tool.backToCatalog')}</Link>
       </p>
-      <h1>{simulator.name.fr}</h1>
+      <h1>{simulator.name[language]}</h1>
       <p>
-        <StatusBadge status={simulator.status} /> {domain?.name.fr}
+        <StatusBadge status={simulator.status} /> {domain?.name[language]}
       </p>
-      <p>{simulator.description.fr}</p>
+      <p>{simulator.description[language]}</p>
       {simulator.status === 'planned' && (
         <p className="notice" role="note">
-          Cet outil n’est pas encore disponible. Aucun calcul ni résultat n’est proposé pour
-          l’instant.
+          {t('tool.plannedNotice')}
         </p>
       )}
       {simulator.status === 'prototype' && (
         <p className="notice" role="note">
-          Cet outil est un prototype : ses résultats ne sont pas encore validés.
+          {t('tool.prototypeNotice')}
         </p>
       )}
     </main>

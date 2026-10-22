@@ -68,6 +68,8 @@ Les outils `planned` ont une fiche de présentation sobre, **ne mènent à aucun
 | ADR-07 | Graphiques : Plotly.js (version allégée si possible) en chargement différé ; Chart.js si la taille du build pose problème. À mesurer à J8. | Poids du bundle. |
 | ADR-08 | Si aucune source identifiable n'est trouvée pour les zones de Van Krevelen à J8 : nuage de points **sans zones**. | Pas de zones non traçables. |
 | ADR-09 | Dépôt public (GitHub Pages gratuit). Licence : `[À DÉCIDER par le porteur du projet]`. | — |
+| ADR-10 | Internationalisation : module interne typé (`src/i18n`, dictionnaires TypeScript `fr.ts` / `en.ts`, fonction pure `translate`) à la place d'i18next. Les clés sont vérifiées par TypeScript et par un test de complétude. À réévaluer si des pluriels ou formats complexes deviennent nécessaires. | Besoins simples, aucune dépendance supplémentaire. |
+| ADR-11 | Couleur d'accent : palette de 6 couleurs prédéfinies, avec une variante pour le thème clair et une pour le thème sombre, plutôt qu'un sélecteur libre. Contrastes à mesurer au Jour 13. | Garantit une lisibilité minimale. |
 
 Toute nouvelle décision significative est ajoutée à ce tableau.
 
