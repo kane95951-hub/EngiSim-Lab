@@ -2,6 +2,10 @@ import { Link, useParams } from 'react-router-dom'
 import { usePreferences } from '../app/preferences-context'
 import { DOMAINS, SIMULATORS } from '../catalog/simulators'
 import StatusBadge from '../components/catalog/StatusBadge'
+import FidelityBadge from '../components/scientific/FidelityBadge'
+import ScientificSheet from '../components/scientific/ScientificSheet'
+import { MODEL_METAS } from '../modules'
+import { REFERENCES } from '../science/references'
 
 export default function Outil() {
   const { id } = useParams()
@@ -19,6 +23,7 @@ export default function Outil() {
   }
 
   const domain = DOMAINS.find((d) => d.id === simulator.domain)
+  const meta = MODEL_METAS.find((m) => m.id === simulator.id)
 
   return (
     <main>
@@ -27,7 +32,9 @@ export default function Outil() {
       </p>
       <h1>{simulator.name[language]}</h1>
       <p>
-        <StatusBadge status={simulator.status} /> {domain?.name[language]}
+        <StatusBadge status={simulator.status} />{' '}
+        {simulator.fidelityLevel && <FidelityBadge level={simulator.fidelityLevel} />}{' '}
+        {domain?.name[language]}
       </p>
       <p>{simulator.description[language]}</p>
       {simulator.status === 'planned' && (
@@ -39,6 +46,9 @@ export default function Outil() {
         <p className="notice" role="note">
           {t('tool.prototypeNotice')}
         </p>
+      )}
+      {meta && (
+        <ScientificSheet meta={meta} references={REFERENCES} level={simulator.fidelityLevel} />
       )}
     </main>
   )

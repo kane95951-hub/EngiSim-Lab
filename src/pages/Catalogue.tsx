@@ -6,6 +6,7 @@ import { filterSimulators } from '../catalog/search'
 import { DOMAINS, SIMULATORS } from '../catalog/simulators'
 import type { Domain, Status } from '../catalog/types'
 import StatusBadge from '../components/catalog/StatusBadge'
+import FidelityBadge from '../components/scientific/FidelityBadge'
 
 const STATUSES: Status[] = ['available', 'prototype', 'planned']
 
@@ -89,7 +90,8 @@ export default function Catalogue() {
                   <Link to={`/outil/${simulator.id}`}>{simulator.name[language]}</Link>
                 </h2>
                 <p>
-                  <StatusBadge status={simulator.status} />
+                  <StatusBadge status={simulator.status} />{' '}
+                  {simulator.fidelityLevel && <FidelityBadge level={simulator.fidelityLevel} />}
                 </p>
                 <p>{simulator.description[language]}</p>
                 <p className="muted">{domainInfo?.name[language]}</p>

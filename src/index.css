@@ -240,3 +240,48 @@ button {
   border-radius: 50%;
   border: 1px solid var(--border);
 }
+
+.badge--fidelity {
+  border-color: var(--accent);
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.95em;
+}
+
+.sheet h3,
+.interpretation h3 {
+  font-size: 1rem;
+  margin: 1.25rem 0 0.4rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: var(--surface);
+}
+
+.issues {
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem 0.5rem 1.75rem;
+  border: 1px solid var(--border);
+  border-left: 4px solid #b42318;
+  border-radius: 0.4rem;
+  background: var(--surface);
+}

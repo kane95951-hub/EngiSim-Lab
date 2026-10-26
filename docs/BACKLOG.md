@@ -25,16 +25,22 @@ Calendrier de référence : `SPEC.md` §11. Ordre de coupe en cas de retard : `S
 - Dette du Jour 3 soldée au Jour 4 : libellés déplacés dans les dictionnaires FR/EN
 
 ## Jour 4 — FR/EN et thèmes
-- [ ] Dictionnaires `fr.ts` / `en.ts` (clés identiques) + test de complétude (ADR-10)
-- [ ] Tous les libellés du Jour 3 traduits ; changement de langue immédiat, langue mémorisée
-- [ ] Thème clair / sombre / système, couleur d'accent (ADR-11), préférences mémorisées
-- [ ] Page Paramètres ; sélecteur de langue dans l'en-tête
-- [ ] Clavier et mobile vérifiés sur les contrôles communs
+- [x] Dictionnaires `fr.ts` / `en.ts` (clés identiques) + test de complétude (ADR-10)
+- [x] Tous les libellés du Jour 3 traduits ; changement de langue immédiat, langue mémorisée
+- [x] Thème clair / sombre / système, couleur d'accent (ADR-11), préférences mémorisées
+- [x] Page Paramètres ; sélecteur de langue dans l'en-tête
+- [x] Clavier et mobile vérifiés sur les contrôles communs
 - À faire plus tard : page « Mes travaux » (Jour 11), mesure des contrastes d'accent (Jour 13)
 
 ## Jour 5 — Gabarit scientifique
-- [ ] Gabarit de dossier (meta, model, tests, interprétation, ui, fiches)
-- [ ] Badge N1/N2/N3 ; enveloppe JSON versionnée définie
+- [ ] Types de métadonnées (`ModelMeta`), registre des références avec statut de vérification
+- [ ] Validation d'entrées commune (`checkNumber`, `parseDecimal`) et messages FR/EN
+- [ ] Règle de fidélité N1/N2/N3 automatisée (`maxSupportedLevel`) et test de cohérence du catalogue
+- [ ] Mécanisme d'interprétation : lecture prudente retenue tant que les références ne sont pas vérifiées
+- [ ] Enveloppe JSON versionnée avec validation à l'import (`parseEnvelope`)
+- [ ] Composants : badge de fidélité, fiche scientifique, panneau d'interprétation, liste d'erreurs
+- [ ] Dossier `src/modules/_template` et procédure `docs/NOUVEL-OUTIL.md`
+- Remarque : badge et fiche ne sont visibles dans le navigateur qu'à partir du Jour 6 (premier outil implémenté)
 
 ## Jour 6 — Rock-Eval (calculs)
 - [ ] HI, OI, PI, S2/S3 optionnel

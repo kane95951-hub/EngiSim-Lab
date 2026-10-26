@@ -29,6 +29,7 @@ Exactitude et traçabilité scientifiques → tests reproductibles → fonctionn
 - À la fin du lot : lance `npm run lint`, `npm test` et `npm run build`. Rapporte les **résultats réels**, les fichiers modifiés, les limites restantes et les sources à vérifier.
 - Si un test échoue, corrige avant de passer au lot suivant.
 - Ne prétends jamais avoir exécuté un test, déployé le site, consulté une source ou effectué une validation si ce n'est pas le cas.
+- Pour créer ou modifier un outil, suis `docs/NOUVEL-OUTIL.md` et copie `src/modules/_template`. Le niveau N1/N2/N3 affiché doit correspondre aux preuves (test `registry.test.ts`).
 - Mets à jour `docs/BACKLOG.md` (cases cochées) et `docs/SOURCES.md` (statuts) à chaque lot concerné.
 
 ## Interlocuteur

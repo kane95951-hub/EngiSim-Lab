@@ -70,6 +70,7 @@ Les outils `planned` ont une fiche de présentation sobre, **ne mènent à aucun
 | ADR-09 | Dépôt public (GitHub Pages gratuit). Licence : `[À DÉCIDER par le porteur du projet]`. | — |
 | ADR-10 | Internationalisation : module interne typé (`src/i18n`, dictionnaires TypeScript `fr.ts` / `en.ts`, fonction pure `translate`) à la place d'i18next. Les clés sont vérifiées par TypeScript et par un test de complétude. À réévaluer si des pluriels ou formats complexes deviennent nécessaires. | Besoins simples, aucune dépendance supplémentaire. |
 | ADR-11 | Couleur d'accent : palette de 6 couleurs prédéfinies, avec une variante pour le thème clair et une pour le thème sombre, plutôt qu'un sélecteur libre. Contrastes à mesurer au Jour 13. | Garantit une lisibilité minimale. |
+| ADR-12 | Fiches scientifiques : générées à partir de `meta.ts` (structure bilingue typée) et affichées par le composant `ScientificSheet`, à la place de fichiers Markdown `fiche.fr.md` / `fiche.en.md`. Les métadonnées vivent dans `meta.ts` (et non `meta.json`). | Évite une dépendance de rendu Markdown et une double source de vérité. |
 
 Toute nouvelle décision significative est ajoutée à ce tableau.
 
