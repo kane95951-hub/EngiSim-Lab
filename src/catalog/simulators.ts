@@ -47,7 +47,9 @@ export const SIMULATORS: SimulatorMeta[] = [
       en: 'Enter or import S1, S2, S3, TOC and Tmax from CSV; compute HI, OI and PI with data-quality alerts.',
     },
     keywords: ['rock-eval', 'pyrolyse', 'pyrolysis', 'S1', 'S2', 'S3', 'TOC', 'Tmax', 'HI', 'OI', 'PI', 'roche mère', 'source rock'],
-    status: 'planned',
+    // Prototype : références non vérifiées, donc niveau N1 au maximum (règle contrôlée par registry.test.ts).
+    status: 'prototype',
+    fidelityLevel: 'N1',
   },
   {
     id: 'van-krevelen',

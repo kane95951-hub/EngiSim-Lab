@@ -101,6 +101,47 @@ export const fr = {
   'issue.notAboveMin': '{field} doit être strictement supérieur à {bound}.',
   'issue.aboveMax': '{field} doit être inférieur ou égal à {bound}.',
   'issue.notBelowMax': '{field} doit être strictement inférieur à {bound}.',
+  'tool.loading': 'Chargement de l’outil…',
+  'rockeval.convention':
+    'Convention : S1 et S2 en mg HC/g de roche, S3 en mg CO₂/g de roche, TOC en % massique ; HI en mg HC/g TOC, OI en mg CO₂/g TOC.',
+  'rockeval.assume.noThresholds':
+    'Aucune classification de maturité ou de type de kérogène n’est appliquée : les seuils ne sont pas encore sourcés.',
+  'rockeval.warn.tmaxMissing': 'Tmax est absent : aucune information sur la maturité thermique n’est évaluée.',
+  'rockeval.warn.tmaxFragile':
+    'Tmax est fragile quand le signal S2 est faible ou atypique : à interpréter avec prudence.',
+  'rockeval.warn.hiOiMissing':
+    'HI ou OI n’est pas calculable : TOC nul ou donnée manquante (jamais remplacée par zéro).',
+  'rockeval.warn.indicesDepend':
+    'HI et OI dépendent aussi de la maturation, des altérations et de la qualité du TOC.',
+  'rockeval.warn.piUndefined': 'PI est indéfini : S1 ou S2 manque, ou S1 + S2 est nul.',
+  'rockeval.warn.piCauses':
+    'Un PI donné peut avoir plusieurs causes : il ne suffit pas à conclure sur la maturité ou l’origine des hydrocarbures.',
+  'rockeval.warn.s2s3Zero': 'S2/S3 n’est pas calculable : S3 est nul.',
+  'rockeval.inputs': 'Valeurs saisies',
+  'rockeval.sampleId': 'Identifiant de l’échantillon',
+  'rockeval.field.s1': 'S1 (mg HC/g roche)',
+  'rockeval.field.s2': 'S2 (mg HC/g roche)',
+  'rockeval.field.s3': 'S3 (mg CO₂/g roche)',
+  'rockeval.field.toc': 'TOC (% massique)',
+  'rockeval.field.tmax': 'Tmax (°C)',
+  'rockeval.optionalHint':
+    'Un champ vide est traité comme une donnée manquante, jamais comme zéro. Décimale : point ou virgule.',
+  'rockeval.loadExample': 'Charger l’exemple synthétique',
+  'rockeval.clear': 'Effacer',
+  'rockeval.exampleNote':
+    'Exemple synthétique : il sert à vérifier les formules, ce n’est pas une analyse de laboratoire.',
+  'rockeval.noInput': 'Saisissez au moins une valeur (S1, S2, S3 ou TOC) pour lancer le calcul.',
+  'rockeval.sample': 'Échantillon : {id}',
+  'rockeval.results': 'Grandeurs calculées',
+  'rockeval.col.index': 'Indice',
+  'rockeval.col.value': 'Valeur',
+  'rockeval.col.unit': 'Unité',
+  'rockeval.col.formula': 'Formule',
+  'rockeval.notComputable': 'Non calculable',
+  'rockeval.reason.missingInput': 'donnée manquante',
+  'rockeval.reason.zeroToc': 'TOC nul',
+  'rockeval.reason.zeroDenominator': 'dénominateur nul',
+  'rockeval.dimensionless': 'sans dimension',
 } satisfies Record<string, string>
 
 export type MessageKey = keyof typeof fr

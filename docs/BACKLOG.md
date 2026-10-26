@@ -33,20 +33,24 @@ Calendrier de référence : `SPEC.md` §11. Ordre de coupe en cas de retard : `S
 - À faire plus tard : page « Mes travaux » (Jour 11), mesure des contrastes d'accent (Jour 13)
 
 ## Jour 5 — Gabarit scientifique
-- [ ] Types de métadonnées (`ModelMeta`), registre des références avec statut de vérification
-- [ ] Validation d'entrées commune (`checkNumber`, `parseDecimal`) et messages FR/EN
-- [ ] Règle de fidélité N1/N2/N3 automatisée (`maxSupportedLevel`) et test de cohérence du catalogue
-- [ ] Mécanisme d'interprétation : lecture prudente retenue tant que les références ne sont pas vérifiées
-- [ ] Enveloppe JSON versionnée avec validation à l'import (`parseEnvelope`)
-- [ ] Composants : badge de fidélité, fiche scientifique, panneau d'interprétation, liste d'erreurs
-- [ ] Dossier `src/modules/_template` et procédure `docs/NOUVEL-OUTIL.md`
+- [x] Types de métadonnées (`ModelMeta`), registre des références avec statut de vérification
+- [x] Validation d'entrées commune (`checkNumber`, `parseDecimal`) et messages FR/EN
+- [x] Règle de fidélité N1/N2/N3 automatisée (`maxSupportedLevel`) et test de cohérence du catalogue
+- [x] Mécanisme d'interprétation : lecture prudente retenue tant que les références ne sont pas vérifiées
+- [x] Enveloppe JSON versionnée avec validation à l'import (`parseEnvelope`)
+- [x] Composants : badge de fidélité, fiche scientifique, panneau d'interprétation, liste d'erreurs
+- [x] Dossier `src/modules/_template` et procédure `docs/NOUVEL-OUTIL.md`
 - Remarque : badge et fiche ne sont visibles dans le navigateur qu'à partir du Jour 6 (premier outil implémenté)
 
 ## Jour 6 — Rock-Eval (calculs)
-- [ ] HI, OI, PI, S2/S3 optionnel
+- [ ] HI, OI, PI, S2/S3 optionnel (moteur pur `model.ts`)
 - [ ] Cas imposé : HI = 400, OI = 50, PI ≈ 0,0588235
-- [ ] Rejet des valeurs négatives, non numériques, infinies ; TOC nul → HI/OI non calculables ; S1+S2 = 0 → PI indéfini
+- [ ] Rejet des valeurs négatives, non numériques, infinies ; TOC nul → HI/OI non calculables ; S1+S2 = 0 → PI indéfini ; valeur manquante jamais remplacée par zéro
+- [ ] Interface de saisie d'un échantillon avec unités, formules et distinction saisi/calculé
+- [ ] Interprétation : hypothèses et mises en garde seulement, aucune lecture non sourcée
+- [ ] Outil au statut « Prototype », niveau N1 (références non vérifiées)
 - [ ] Suppression du test de fumée `src/smoke.test.ts`
+- À faire en parallèle : consulter réellement Peters 1986 et Espitalié pour passer les références à « vérifiée » (puis N2)
 
 ## Jour 7 — Import CSV Rock-Eval
 - [ ] Aperçu, mapping manuel des colonnes, confirmation des unités

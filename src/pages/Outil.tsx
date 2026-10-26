@@ -6,6 +6,7 @@ import FidelityBadge from '../components/scientific/FidelityBadge'
 import ScientificSheet from '../components/scientific/ScientificSheet'
 import { MODEL_METAS } from '../modules'
 import { REFERENCES } from '../science/references'
+import ToolWorkspace from './ToolWorkspace'
 
 export default function Outil() {
   const { id } = useParams()
@@ -47,6 +48,7 @@ export default function Outil() {
           {t('tool.prototypeNotice')}
         </p>
       )}
+      {simulator.status !== 'planned' && <ToolWorkspace id={simulator.id} />}
       {meta && (
         <ScientificSheet meta={meta} references={REFERENCES} level={simulator.fidelityLevel} />
       )}

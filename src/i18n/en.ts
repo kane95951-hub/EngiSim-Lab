@@ -104,4 +104,45 @@ export const en: Record<MessageKey, string> = {
   'issue.notAboveMin': '{field} must be strictly greater than {bound}.',
   'issue.aboveMax': '{field} must be less than or equal to {bound}.',
   'issue.notBelowMax': '{field} must be strictly less than {bound}.',
+  'tool.loading': 'Loading the tool…',
+  'rockeval.convention':
+    'Convention: S1 and S2 in mg HC/g rock, S3 in mg CO₂/g rock, TOC in mass %; HI in mg HC/g TOC, OI in mg CO₂/g TOC.',
+  'rockeval.assume.noThresholds':
+    'No maturity or kerogen-type classification is applied: thresholds are not sourced yet.',
+  'rockeval.warn.tmaxMissing': 'Tmax is missing: no information on thermal maturity is evaluated.',
+  'rockeval.warn.tmaxFragile':
+    'Tmax is fragile when the S2 signal is low or atypical: interpret with caution.',
+  'rockeval.warn.hiOiMissing':
+    'HI or OI cannot be computed: zero TOC or missing data (never replaced by zero).',
+  'rockeval.warn.indicesDepend':
+    'HI and OI also depend on maturation, alteration and TOC quality.',
+  'rockeval.warn.piUndefined': 'PI is undefined: S1 or S2 is missing, or S1 + S2 is zero.',
+  'rockeval.warn.piCauses':
+    'A given PI can have several causes: it is not enough to conclude on maturity or on the origin of the hydrocarbons.',
+  'rockeval.warn.s2s3Zero': 'S2/S3 cannot be computed: S3 is zero.',
+  'rockeval.inputs': 'Entered values',
+  'rockeval.sampleId': 'Sample identifier',
+  'rockeval.field.s1': 'S1 (mg HC/g rock)',
+  'rockeval.field.s2': 'S2 (mg HC/g rock)',
+  'rockeval.field.s3': 'S3 (mg CO₂/g rock)',
+  'rockeval.field.toc': 'TOC (mass %)',
+  'rockeval.field.tmax': 'Tmax (°C)',
+  'rockeval.optionalHint':
+    'An empty field is treated as missing data, never as zero. Decimal separator: point or comma.',
+  'rockeval.loadExample': 'Load the synthetic example',
+  'rockeval.clear': 'Clear',
+  'rockeval.exampleNote':
+    'Synthetic example: it is used to check the formulas and is not a laboratory analysis.',
+  'rockeval.noInput': 'Enter at least one value (S1, S2, S3 or TOC) to run the calculation.',
+  'rockeval.sample': 'Sample: {id}',
+  'rockeval.results': 'Computed quantities',
+  'rockeval.col.index': 'Index',
+  'rockeval.col.value': 'Value',
+  'rockeval.col.unit': 'Unit',
+  'rockeval.col.formula': 'Formula',
+  'rockeval.notComputable': 'Not computable',
+  'rockeval.reason.missingInput': 'missing data',
+  'rockeval.reason.zeroToc': 'zero TOC',
+  'rockeval.reason.zeroDenominator': 'zero denominator',
+  'rockeval.dimensionless': 'dimensionless',
 }
