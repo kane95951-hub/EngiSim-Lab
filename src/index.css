@@ -315,3 +315,54 @@ th {
   gap: 0.5rem;
   margin-top: 0.75rem;
 }
+
+.mode-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.mode-switcher button[aria-pressed='true'] {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+
+.file-button {
+  display: inline-block;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  background: var(--bg);
+}
+
+.file-button:focus-within {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.file-button input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  position: absolute;
+  padding: 0;
+  border: 0;
+}
+
+.row-selected th,
+.row-selected td {
+  background: var(--surface);
+  font-weight: 600;
+}
+
+td button,
+th button {
+  padding: 0.15rem 0.5rem;
+}
+
+.table-scroll table {
+  font-size: 0.92rem;
+}

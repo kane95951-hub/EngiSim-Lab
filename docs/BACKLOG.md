@@ -43,20 +43,24 @@ Calendrier de référence : `SPEC.md` §11. Ordre de coupe en cas de retard : `S
 - Remarque : badge et fiche ne sont visibles dans le navigateur qu'à partir du Jour 6 (premier outil implémenté)
 
 ## Jour 6 — Rock-Eval (calculs)
-- [ ] HI, OI, PI, S2/S3 optionnel (moteur pur `model.ts`)
-- [ ] Cas imposé : HI = 400, OI = 50, PI ≈ 0,0588235
-- [ ] Rejet des valeurs négatives, non numériques, infinies ; TOC nul → HI/OI non calculables ; S1+S2 = 0 → PI indéfini ; valeur manquante jamais remplacée par zéro
-- [ ] Interface de saisie d'un échantillon avec unités, formules et distinction saisi/calculé
-- [ ] Interprétation : hypothèses et mises en garde seulement, aucune lecture non sourcée
-- [ ] Outil au statut « Prototype », niveau N1 (références non vérifiées)
-- [ ] Suppression du test de fumée `src/smoke.test.ts`
+- [x] HI, OI, PI, S2/S3 optionnel (moteur pur `model.ts`)
+- [x] Cas imposé : HI = 400, OI = 50, PI ≈ 0,0588235
+- [x] Rejet des valeurs négatives, non numériques, infinies ; TOC nul → HI/OI non calculables ; S1+S2 = 0 → PI indéfini ; valeur manquante jamais remplacée par zéro
+- [x] Interface de saisie d'un échantillon avec unités, formules et distinction saisi/calculé
+- [x] Interprétation : hypothèses et mises en garde seulement, aucune lecture non sourcée
+- [x] Outil au statut « Prototype », niveau N1 (références non vérifiées)
+- [x] Suppression du test de fumée `src/smoke.test.ts`
 - À faire en parallèle : consulter réellement Peters 1986 et Espitalié pour passer les références à « vérifiée » (puis N2)
 
 ## Jour 7 — Import CSV Rock-Eval
-- [ ] Aperçu, mapping manuel des colonnes, confirmation des unités
-- [ ] Séparateurs `,` `;` tab, virgule décimale, BOM
-- [ ] Cellules vides, doublons, valeurs invalides signalés ; données originales conservées
-- [ ] Tableau filtrable ; export CSV ; exemples étiquetés synthétiques
+- [ ] Lecture CSV : séparateurs `;` `,` tabulation, virgule décimale, BOM, UTF-8 ou windows-1252, guillemets
+- [ ] Aperçu des premières lignes, association automatique puis manuelle des colonnes
+- [ ] Confirmation obligatoire des unités (TOC en % ou en fraction) avant tout calcul
+- [ ] Cellules vides, valeurs invalides, doublons, colonnes irrégulières signalés ; données d'origine conservées
+- [ ] HI/OI du fichier traités comme valeurs importées et comparés au recalcul sans les écraser
+- [ ] Tableau filtrable, sélection d'un échantillon (détail et interprétation), export CSV des résultats
+- [ ] Exemple CSV synthétique clairement étiqueté
+- Remarque : le partage des échantillons valides avec Van Krevelen se fait au Jour 8
 
 ## Jour 8 — Van Krevelen
 - [ ] Nuage HI–OI, sélection, comparaison, export
