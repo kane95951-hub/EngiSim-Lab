@@ -53,19 +53,24 @@ Calendrier de référence : `SPEC.md` §11. Ordre de coupe en cas de retard : `S
 - À faire en parallèle : consulter réellement Peters 1986 et Espitalié pour passer les références à « vérifiée » (puis N2)
 
 ## Jour 7 — Import CSV Rock-Eval
-- [ ] Lecture CSV : séparateurs `;` `,` tabulation, virgule décimale, BOM, UTF-8 ou windows-1252, guillemets
-- [ ] Aperçu des premières lignes, association automatique puis manuelle des colonnes
-- [ ] Confirmation obligatoire des unités (TOC en % ou en fraction) avant tout calcul
-- [ ] Cellules vides, valeurs invalides, doublons, colonnes irrégulières signalés ; données d'origine conservées
-- [ ] HI/OI du fichier traités comme valeurs importées et comparés au recalcul sans les écraser
-- [ ] Tableau filtrable, sélection d'un échantillon (détail et interprétation), export CSV des résultats
-- [ ] Exemple CSV synthétique clairement étiqueté
+- [x] Lecture CSV : séparateurs `;` `,` tabulation, virgule décimale, BOM, UTF-8 ou windows-1252, guillemets
+- [x] Aperçu des premières lignes, association automatique puis manuelle des colonnes
+- [x] Confirmation obligatoire des unités (TOC en % ou en fraction) avant tout calcul
+- [x] Cellules vides, valeurs invalides, doublons, colonnes irrégulières signalés ; données d'origine conservées
+- [x] HI/OI du fichier traités comme valeurs importées et comparés au recalcul sans les écraser
+- [x] Tableau filtrable, sélection d'un échantillon (détail et interprétation), export CSV des résultats
+- [x] Exemple CSV synthétique clairement étiqueté
 - Remarque : le partage des échantillons valides avec Van Krevelen se fait au Jour 8
 
 ## Jour 8 — Van Krevelen
-- [ ] Nuage HI–OI, sélection, comparaison, export
-- [ ] Décision zones : source identifiable trouvée, sinon pas de zones (ADR-08)
-- [ ] Mesure du poids du bundle ; choix de la bibliothèque de graphiques
+- [ ] Nuage de points HI–OI (SVG interne), axes et unités, échelles linéaires de 0 à un peu plus que le maximum
+- [ ] Points identifiés, sélection/désélection (souris, clavier, cases à cocher), tableau de comparaison
+- [ ] Échantillons valides repris de l'outil Rock-Eval (saisie manuelle et import CSV) ; HI/OI recalculés uniquement
+- [ ] Décision zones (ADR-08) : aucune source identifiée, donc aucune zone dessinée ; mention affichée
+- [ ] Export CSV des échantillons et export JSON du scénario (enveloppe versionnée)
+- [ ] Choix de la bibliothèque de graphiques : composant SVG interne (ADR-13) ; poids du build relevé
+- [ ] Outil au statut « Prototype », niveau N1
+- À faire : trouver une source identifiable pour les domaines de types de matière organique (REF-VK)
 
 ## Jour 9 — Porosité / saturation
 - [ ] Mode volumes : φ = 0,20 et Sw = 0,25 sur le cas de test

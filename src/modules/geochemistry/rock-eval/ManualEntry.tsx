@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { usePreferences } from '../../../app/preferences-context'
 import InterpretationPanel from '../../../components/scientific/InterpretationPanel'
 import IssueList from '../../../components/scientific/IssueList'
@@ -7,6 +7,7 @@ import { evaluateRules } from '../../../science/interpretation'
 import { REFERENCES } from '../../../science/references'
 import { SYNTHETIC_EXAMPLE } from './example'
 import { ROCK_EVAL_RULES } from './interpretation'
+import { sampleFromResult, sampleStore } from './samples'
 import {
   computeRockEval,
   type NotComputable,
@@ -52,6 +53,7 @@ function buildRows(result: RockEvalResult): Row[] {
 export default function ManualEntry() {
   const { language, t } = usePreferences()
   const [form, setForm] = useState<FormState>(EMPTY_FORM)
+  const [touched, setTouched] = useState(false)
 
   const hasData = (['s1', 's2', 's3', 'toc'] as const).some((key) => form[key].trim() !== '')
   const outcome = useMemo(() => (hasData ? computeRockEval(form) : null), [form, hasData])
@@ -67,8 +69,17 @@ export default function ManualEntry() {
   )
 
   function update(key: keyof FormState, value: string) {
+    setTouched(true)
     setForm((previous) => ({ ...previous, [key]: value }))
   }
+
+  // Publie l'échantillon valide pour les autres outils (Van Krevelen), seulement après une action de l'utilisateur
+  // pour ne pas effacer un échantillon déjà partagé lorsqu'on revient sur l'outil.
+  useEffect(() => {
+    if (!touched) return
+    const sample = result ? sampleFromResult(result) : null
+    sampleStore.set('manual', sample ? [sample] : [], result && !sample ? 1 : 0)
+  }, [touched, result])
 
   return (
     <>
@@ -103,10 +114,16 @@ export default function ManualEntry() {
         </div>
 
         <div className="actions">
-          <button type="button" onClick={() => setForm(SYNTHETIC_EXAMPLE)}>
+          <button type="button" onClick={() => {
+              setTouched(true)
+              setForm(SYNTHETIC_EXAMPLE)
+            }}>
             {t('rockeval.loadExample')}
           </button>
-          <button type="button" onClick={() => setForm(EMPTY_FORM)}>
+          <button type="button" onClick={() => {
+              setTouched(true)
+              setForm(EMPTY_FORM)
+            }}>
             {t('rockeval.clear')}
           </button>
         </div>

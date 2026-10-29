@@ -60,7 +60,9 @@ export const SIMULATORS: SimulatorMeta[] = [
       en: 'Interactive HI–OI scatter plot built from Rock-Eval samples.',
     },
     keywords: ['van krevelen', 'HI', 'OI', 'kérogène', 'kerogen', 'matière organique', 'organic matter'],
-    status: 'planned',
+    // Prototype : références non vérifiées et aucune zone sourcée, donc niveau N1.
+    status: 'prototype',
+    fidelityLevel: 'N1',
   },
   {
     id: 'arrhenius-maturation',

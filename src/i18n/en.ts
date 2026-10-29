@@ -227,4 +227,46 @@ export const en: Record<MessageKey, string> = {
   'csv.detail.imported': 'Imported and recomputed values',
   'csv.detail.compare': 'Imported {name}: {imported} · Recomputed {name}: {computed}',
   'csv.detail.duplicates': 'Same identifier on lines: {lines}.',
+  'vk.chartTitle': 'HI–OI diagram',
+  'vk.intro':
+    'Each point is a valid sample from the Rock-Eval tool (manual entry or CSV import). The plotted values are the recomputed values.',
+  'vk.empty':
+    'No sample to plot. Compute HI and OI in the Rock-Eval tool (manual entry, or CSV import with confirmed units).',
+  'vk.goToRockEval': 'Open the Rock-Eval interpreter',
+  'vk.axis.oi': 'OI — oxygen index (mg CO₂/g TOC)',
+  'vk.axis.hi': 'HI — hydrogen index (mg HC/g TOC)',
+  'vk.chartAria':
+    'Scatter plot of HI versus OI. Each point is a button: activate it to select it.',
+  'vk.chartHint':
+    'Click a point, or use Tab then Enter, to select it. The table below offers the same function with checkboxes.',
+  'vk.selectAll': 'Select all',
+  'vk.selectNone': 'Deselect all',
+  'vk.noZones':
+    'No organic-matter type zone is drawn: their limits must come from an identifiable reference (REF-VK, to be sourced).',
+  'vk.compareTitle': 'Selected samples ({count})',
+  'vk.compareEmpty': 'Select points to compare them here.',
+  'vk.dataTitle': 'Plotted samples ({count})',
+  'vk.exportCsv': 'Export samples (CSV)',
+  'vk.exportScenario': 'Export scenario (JSON)',
+  'vk.exportNote':
+    'The scenario (versioned JSON) contains the plotted samples and the selection. Re-importing it will be available with “My work”.',
+  'vk.scenarioName': 'Van Krevelen — {date}',
+  'vk.line': 'Line {line}',
+  'vk.manualSample': 'Manual entry',
+  'vk.pointLabel': '{label}: HI = {hi}, OI = {oi}',
+  'vk.selectSample': 'Select {label}',
+  'vk.origin.csv': 'CSV import',
+  'vk.origin.manual': 'Manual entry',
+  'vk.col.select': 'Selection',
+  'vk.col.sample': 'Sample',
+  'vk.col.origin': 'Origin',
+  'vk.obs.count': 'Samples plotted: {total} · selected: {selected}.',
+  'vk.assume.source':
+    'HI and OI come from the Rock-Eval tool (recomputed values, never the imported ones).',
+  'vk.assume.noZones': 'No classification is applied: zone limits are not sourced yet.',
+  'vk.warn.maturation':
+    'A point’s position also depends on maturation and alteration: it is not enough to determine the kerogen type.',
+  'vk.warn.quality': 'Data quality (low TOC, atypical measurements) affects HI and OI.',
+  'vk.warn.excluded':
+    'Samples not plotted: {count} (invalid values, or HI/OI not computable).',
 }

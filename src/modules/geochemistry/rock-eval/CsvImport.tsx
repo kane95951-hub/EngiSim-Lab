@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { usePreferences } from '../../../app/preferences-context'
 import InterpretationPanel from '../../../components/scientific/InterpretationPanel'
 import IssueList from '../../../components/scientific/IssueList'
@@ -24,6 +24,7 @@ import {
 } from './import'
 import { ROCK_EVAL_RULES } from './interpretation'
 import type { NotComputable } from './model'
+import { sampleStore, samplesFromRows } from './samples'
 
 const MAX_FILE_BYTES = 5 * 1024 * 1024
 const MAX_DISPLAY_ROWS = 200
@@ -111,6 +112,18 @@ export default function CsvImport() {
     () => (parsed && parsed.rows.length > 1 && confirmed ? importRockEval(parsed, mapping, { tocUnit }) : null),
     [parsed, mapping, tocUnit, confirmed],
   )
+  // Publie les échantillons valides pour les autres outils (Van Krevelen). Rien n'est publié tant qu'aucun fichier
+  // n'a été chargé, pour ne pas effacer les échantillons déjà partagés lorsqu'on revient sur l'outil.
+  useEffect(() => {
+    if (source === null) return
+    if (rows === null) {
+      sampleStore.set('csv', [], 0)
+      return
+    }
+    const { samples, excluded } = samplesFromRows(rows)
+    sampleStore.set('csv', samples, excluded)
+  }, [source, rows])
+
   const summary = useMemo(() => (rows ? summarize(rows) : null), [rows])
   const filtered = useMemo(
     () => (rows ? filterImportedRows(rows, { query, status: statusFilter }) : []),

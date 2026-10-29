@@ -366,3 +366,57 @@ th button {
 .table-scroll table {
   font-size: 0.92rem;
 }
+
+.vk-chart {
+  display: block;
+  width: 100%;
+  max-width: 48rem;
+  height: auto;
+}
+
+.vk-grid {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.vk-axis {
+  stroke: var(--fg);
+  stroke-width: 1.5;
+}
+
+.vk-tick {
+  fill: var(--muted);
+  font-size: 12px;
+}
+
+.vk-title {
+  fill: var(--fg);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.vk-label {
+  fill: var(--fg);
+  font-size: 12px;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 3px;
+}
+
+.vk-point {
+  fill: var(--bg);
+  stroke: var(--fg);
+  stroke-width: 2;
+  cursor: pointer;
+}
+
+.vk-point--selected {
+  fill: var(--accent);
+  stroke: var(--accent);
+}
+
+.vk-point:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}

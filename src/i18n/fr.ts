@@ -225,6 +225,49 @@ export const fr = {
   'csv.detail.imported': 'Valeurs importées et recalculées',
   'csv.detail.compare': '{name} importé : {imported} · {name} recalculé : {computed}',
   'csv.detail.duplicates': 'Même identifiant sur les lignes : {lines}.',
+  'vk.chartTitle': 'Diagramme HI–OI',
+  'vk.intro':
+    'Chaque point est un échantillon valide issu de l’outil Rock-Eval (saisie manuelle ou import CSV). Les valeurs tracées sont les valeurs recalculées.',
+  'vk.empty':
+    'Aucun échantillon à tracer. Calculez HI et OI dans l’outil Rock-Eval (saisie manuelle, ou import CSV avec unités confirmées).',
+  'vk.goToRockEval': 'Ouvrir l’interpréteur Rock-Eval',
+  'vk.axis.oi': 'OI — indice d’oxygène (mg CO₂/g TOC)',
+  'vk.axis.hi': 'HI — indice d’hydrogène (mg HC/g TOC)',
+  'vk.chartAria':
+    'Nuage de points HI en fonction de OI. Chaque point est un bouton : activez-le pour le sélectionner.',
+  'vk.chartHint':
+    'Cliquez sur un point, ou utilisez Tab puis Entrée, pour le sélectionner. Le tableau ci-dessous offre la même fonction avec des cases à cocher.',
+  'vk.selectAll': 'Tout sélectionner',
+  'vk.selectNone': 'Tout désélectionner',
+  'vk.noZones':
+    'Aucune zone de type de matière organique n’est dessinée : leurs limites doivent provenir d’une référence identifiable (REF-VK, à sourcer).',
+  'vk.compareTitle': 'Échantillons sélectionnés ({count})',
+  'vk.compareEmpty': 'Sélectionnez des points pour les comparer ici.',
+  'vk.dataTitle': 'Échantillons tracés ({count})',
+  'vk.exportCsv': 'Exporter les échantillons (CSV)',
+  'vk.exportScenario': 'Exporter le scénario (JSON)',
+  'vk.exportNote':
+    'Le scénario (JSON versionné) contient les échantillons tracés et la sélection. Sa réimportation sera disponible avec « Mes travaux ».',
+  'vk.scenarioName': 'Van Krevelen — {date}',
+  'vk.line': 'Ligne {line}',
+  'vk.manualSample': 'Saisie manuelle',
+  'vk.pointLabel': '{label} : HI = {hi}, OI = {oi}',
+  'vk.selectSample': 'Sélectionner {label}',
+  'vk.origin.csv': 'Import CSV',
+  'vk.origin.manual': 'Saisie manuelle',
+  'vk.col.select': 'Sélection',
+  'vk.col.sample': 'Échantillon',
+  'vk.col.origin': 'Origine',
+  'vk.obs.count': 'Échantillons tracés : {total} · sélectionnés : {selected}.',
+  'vk.assume.source':
+    'HI et OI proviennent de l’outil Rock-Eval (valeurs recalculées, jamais les valeurs importées).',
+  'vk.assume.noZones':
+    'Aucune classification n’est appliquée : les limites de zones ne sont pas encore sourcées.',
+  'vk.warn.maturation':
+    'La position d’un point dépend aussi de la maturation et de l’altération : elle ne suffit pas à déterminer le type de kérogène.',
+  'vk.warn.quality': 'La qualité des données (TOC faible, mesures atypiques) affecte HI et OI.',
+  'vk.warn.excluded':
+    'Échantillons non tracés : {count} (valeurs invalides, ou HI/OI non calculables).',
 } satisfies Record<string, string>
 
 export type MessageKey = keyof typeof fr
