@@ -63,19 +63,25 @@ Calendrier de référence : `SPEC.md` §11. Ordre de coupe en cas de retard : `S
 - Remarque : le partage des échantillons valides avec Van Krevelen se fait au Jour 8
 
 ## Jour 8 — Van Krevelen
-- [ ] Nuage de points HI–OI (SVG interne), axes et unités, échelles linéaires de 0 à un peu plus que le maximum
-- [ ] Points identifiés, sélection/désélection (souris, clavier, cases à cocher), tableau de comparaison
-- [ ] Échantillons valides repris de l'outil Rock-Eval (saisie manuelle et import CSV) ; HI/OI recalculés uniquement
-- [ ] Décision zones (ADR-08) : aucune source identifiée, donc aucune zone dessinée ; mention affichée
-- [ ] Export CSV des échantillons et export JSON du scénario (enveloppe versionnée)
-- [ ] Choix de la bibliothèque de graphiques : composant SVG interne (ADR-13) ; poids du build relevé
-- [ ] Outil au statut « Prototype », niveau N1
+- [x] Nuage de points HI–OI (SVG interne), axes et unités, échelles linéaires de 0 à un peu plus que le maximum
+- [x] Points identifiés, sélection/désélection (souris, clavier, cases à cocher), tableau de comparaison
+- [x] Échantillons valides repris de l'outil Rock-Eval (saisie manuelle et import CSV) ; HI/OI recalculés uniquement
+- [x] Décision zones (ADR-08) : aucune source identifiée, donc aucune zone dessinée ; mention affichée
+- [x] Export CSV des échantillons et export JSON du scénario (enveloppe versionnée)
+- [x] Choix de la bibliothèque de graphiques : composant SVG interne (ADR-13) ; poids du build relevé
+- [x] Outil au statut « Prototype », niveau N1
 - À faire : trouver une source identifiable pour les domaines de types de matière organique (REF-VK)
 
 ## Jour 9 — Porosité / saturation
-- [ ] Mode volumes : φ = 0,20 et Sw = 0,25 sur le cas de test
+- [ ] Mode volumes : Vpore = 20, φ = 0,20 et Sw = 0,25 sur le cas de test
 - [ ] Mode densités : φ ≈ 0,212121 sur le cas de test
-- [ ] Bornes physiques vérifiées ; unités affichées
+- [ ] Bornes physiques vérifiées (Vgrain ≤ Vbulk, Vwater ≤ Vpore, ρfluid < ρgrain, ρbulk entre ρfluid et ρgrain) ; unités affichées
+- [ ] Sw volumétrique clairement distinguée de la saturation d'Archie (ADR-03) ; valeurs manquantes jamais remplacées par zéro
+- [ ] Graphiques : composition du volume total, droite φ(ρbulk) avec le point de calcul
+- [ ] Outil au statut « Prototype », niveau N1 (référence REF-PETROPHYSICS à sourcer)
+- Reporté : loi d'Archie (Jour 16+, ADR-02)
+- Échelles et graduations déplacées vers `src/utils/scale.ts` (partagées entre outils)
+- À faire : identifier un manuel de pétrophysique pour les formules de porosité et de saturation
 
 ## Jour 10 — Darcy 1D
 - [ ] Q = 1e-6 m³/s sur le cas de test

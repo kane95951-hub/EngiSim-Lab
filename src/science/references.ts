@@ -27,6 +27,12 @@ export const REFERENCES: Reference[] = [
     status: 'to-source',
   },
   {
+    id: 'REF-PETROPHYSICS',
+    citation:
+      'Définitions de la porosité, de la saturation et de la porosité par densités (manuel de pétrophysique à identifier)',
+    status: 'to-source',
+  },
+  {
     id: 'REF-VK',
     citation: 'Source des domaines de types de matière organique du diagramme HI–OI (à identifier)',
     status: 'to-source',

@@ -269,4 +269,57 @@ export const en: Record<MessageKey, string> = {
   'vk.warn.quality': 'Data quality (low TOC, atypical measurements) affects HI and OI.',
   'vk.warn.excluded':
     'Samples not plotted: {count} (invalid values, or HI/OI not computable).',
+  'porosity.mode': 'Calculation method',
+  'porosity.mode.volumes': 'From volumes',
+  'porosity.mode.densities': 'From densities',
+  'porosity.inputs': 'Entered values',
+  'porosity.unit.volume': 'Volume unit',
+  'porosity.unit.density': 'Density unit',
+  'porosity.unitHint.volumes':
+    'The three volumes must be expressed in the same unit; φ and Sw are dimensionless.',
+  'porosity.unitHint.densities':
+    'The three densities must be expressed in the same unit; φ is dimensionless.',
+  'porosity.hint':
+    'An empty optional field is treated as missing data, never as zero. Decimal separator: point or comma.',
+  'porosity.field.vbulk': 'Bulk volume Vbulk',
+  'porosity.field.vgrain': 'Grain volume Vgrain',
+  'porosity.field.vwater': 'Water volume Vwater (optional)',
+  'porosity.field.rhoGrain': 'Grain density ρgrain',
+  'porosity.field.rhoBulk': 'Bulk density ρbulk',
+  'porosity.field.rhoFluid': 'Fluid density ρfluid',
+  'porosity.loadExample': 'Load the synthetic example',
+  'porosity.clear': 'Clear',
+  'porosity.exampleNote':
+    'Synthetic example: it is used to check the formulas and is not a measurement.',
+  'porosity.noInput': 'Enter the values to run the calculation.',
+  'porosity.results': 'Computed quantities',
+  'porosity.col.quantity': 'Quantity',
+  'porosity.q.vpore': 'Pore volume Vpore',
+  'porosity.q.phi': 'Porosity φ',
+  'porosity.q.sw': 'Volumetric water saturation Sw',
+  'porosity.q.nonWater': 'Share of pores not occupied by water',
+  'porosity.reason.missingInput': 'water volume missing',
+  'porosity.reason.zeroPoreVolume': 'zero pore volume',
+  'porosity.seg.grain': 'Grains',
+  'porosity.seg.water': 'Water',
+  'porosity.seg.otherPore': 'Pores not occupied by water',
+  'porosity.seg.pore': 'Pores',
+  'porosity.chart.composition': 'Composition of the bulk volume',
+  'porosity.chart.line': 'Porosity as a function of bulk density',
+  'porosity.chart.lineAria':
+    'Line of porosity versus ρbulk; calculation point: ρbulk = {rho}, φ = {phi}.',
+  'porosity.axis.rhoBulk': 'ρbulk ({unit})',
+  'porosity.axis.phi': 'φ (fraction)',
+  'porosity.assume.sameUnit':
+    'The three volumes use the same unit; φ and Sw are dimensionless fractions.',
+  'porosity.assume.density':
+    'Homogeneous matrix of known density, pores filled with a single fluid of known density.',
+  'porosity.warn.zeroPorosity': 'Porosity is zero: the grain volume equals the bulk volume.',
+  'porosity.warn.swNotComputable': 'Sw cannot be computed: the pore volume is zero.',
+  'porosity.warn.volumetricSw':
+    'Sw is the volumetric saturation (water / pore volume): it differs from the saturation derived from resistivities (Archie’s law).',
+  'porosity.warn.pores':
+    'Porosity reflects the entered pore volume, without distinguishing connected from isolated pores.',
+  'porosity.warn.densityInputs':
+    'Density porosity depends directly on the ρgrain and ρfluid values entered (matrix and fluid assumptions).',
 }

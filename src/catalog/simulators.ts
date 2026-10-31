@@ -117,7 +117,9 @@ export const SIMULATORS: SimulatorMeta[] = [
       en: 'Porosity from volumes or densities; volumetric water saturation, with physical-bounds checks.',
     },
     keywords: ['porosité', 'porosity', 'saturation', 'Sw', 'densité', 'density', 'volume'],
-    status: 'planned',
+    // Prototype : référence des formules à identifier, donc niveau N1.
+    status: 'prototype',
+    fidelityLevel: 'N1',
   },
   {
     id: 'archie-saturation',

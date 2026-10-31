@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { checkNumber, gatherIssues, parseDecimal } from './validation'
+import { checkNumber, checkOptionalNumber, gatherIssues, parseDecimal } from './validation'
 
 describe('parseDecimal', () => {
   it('accepte le point, la virgule et la notation scientifique', () => {
@@ -88,5 +88,25 @@ describe('gatherIssues', () => {
       { field: 'b', code: 'missing' },
       { field: 'c', code: 'belowMin', bound: 0 },
     ])
+  })
+})
+
+describe('checkOptionalNumber', () => {
+  it('renvoie null pour un champ vide, sans le remplacer par zéro', () => {
+    for (const value of [undefined, null, '']) {
+      expect(checkOptionalNumber('x', value, { min: 0 })).toEqual({ ok: true, value: null })
+    }
+  })
+
+  it('valide un champ rempli comme checkNumber', () => {
+    expect(checkOptionalNumber('x', '2,5', { min: 0 })).toEqual({ ok: true, value: 2.5 })
+    expect(checkOptionalNumber('x', -1, { min: 0 })).toEqual({
+      ok: false,
+      issues: [{ field: 'x', code: 'belowMin', bound: 0 }],
+    })
+    expect(checkOptionalNumber('x', 'abc')).toEqual({
+      ok: false,
+      issues: [{ field: 'x', code: 'notFinite' }],
+    })
   })
 })

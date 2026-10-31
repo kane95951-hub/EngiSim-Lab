@@ -75,3 +75,16 @@ export function checkNumber(field: string, value: unknown, rules: NumberRules = 
 export function gatherIssues(...results: Checked<unknown>[]): Issue[] {
   return results.flatMap((result) => (result.ok ? [] : result.issues))
 }
+
+// Comme checkNumber, mais un champ vide est accepté et renvoie null (valeur manquante, jamais zéro).
+// Un champ rempli doit être valide.
+export function checkOptionalNumber(
+  field: string,
+  value: unknown,
+  rules: NumberRules = {},
+): Checked<number | null> {
+  const checked = checkNumber(field, value, rules)
+  if (checked.ok) return checked
+  const onlyMissing = checked.issues.length === 1 && checked.issues[0]?.code === 'missing'
+  return onlyMissing ? { ok: true, value: null } : checked
+}

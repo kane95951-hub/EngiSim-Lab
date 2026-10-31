@@ -420,3 +420,74 @@ th button {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
+
+.composition {
+  margin: 1rem 0;
+}
+
+.composition figcaption {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.composition svg {
+  display: block;
+  width: 100%;
+  max-width: 48rem;
+  height: auto;
+}
+
+.seg {
+  stroke: var(--bg);
+  stroke-width: 1;
+}
+
+.seg--grain {
+  fill: var(--muted);
+  background: var(--muted);
+}
+
+.seg--water {
+  fill: var(--accent);
+  background: var(--accent);
+}
+
+.seg--otherPore {
+  fill: var(--border);
+  background: var(--border);
+}
+
+.seg--pore {
+  fill: var(--border);
+  background: var(--border);
+}
+
+.seg-frame {
+  fill: none;
+  stroke: var(--fg);
+  stroke-width: 1.5;
+}
+
+.legend {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+
+.legend .swatch {
+  display: inline-block;
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-right: 0.4rem;
+  vertical-align: -0.1rem;
+  border: 1px solid var(--fg);
+  border-radius: 0.15rem;
+}
+
+.porosity-line {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+}

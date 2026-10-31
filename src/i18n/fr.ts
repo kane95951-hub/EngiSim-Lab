@@ -268,6 +268,60 @@ export const fr = {
   'vk.warn.quality': 'La qualité des données (TOC faible, mesures atypiques) affecte HI et OI.',
   'vk.warn.excluded':
     'Échantillons non tracés : {count} (valeurs invalides, ou HI/OI non calculables).',
+  'porosity.mode': 'Méthode de calcul',
+  'porosity.mode.volumes': 'À partir des volumes',
+  'porosity.mode.densities': 'À partir des masses volumiques',
+  'porosity.inputs': 'Valeurs saisies',
+  'porosity.unit.volume': 'Unité des volumes',
+  'porosity.unit.density': 'Unité des masses volumiques',
+  'porosity.unitHint.volumes':
+    'Les trois volumes doivent être exprimés dans la même unité ; φ et Sw sont sans dimension.',
+  'porosity.unitHint.densities':
+    'Les trois masses volumiques doivent être exprimées dans la même unité ; φ est sans dimension.',
+  'porosity.hint':
+    'Un champ facultatif vide est traité comme une donnée manquante, jamais comme zéro. Décimale : point ou virgule.',
+  'porosity.field.vbulk': 'Volume total Vbulk',
+  'porosity.field.vgrain': 'Volume des grains Vgrain',
+  'porosity.field.vwater': 'Volume d’eau Vwater (optionnel)',
+  'porosity.field.rhoGrain': 'Masse volumique des grains ρgrain',
+  'porosity.field.rhoBulk': 'Masse volumique globale ρbulk',
+  'porosity.field.rhoFluid': 'Masse volumique du fluide ρfluid',
+  'porosity.loadExample': 'Charger l’exemple synthétique',
+  'porosity.clear': 'Effacer',
+  'porosity.exampleNote':
+    'Exemple synthétique : il sert à vérifier les formules, ce n’est pas une mesure.',
+  'porosity.noInput': 'Saisissez les valeurs pour lancer le calcul.',
+  'porosity.results': 'Grandeurs calculées',
+  'porosity.col.quantity': 'Grandeur',
+  'porosity.q.vpore': 'Volume poreux Vpore',
+  'porosity.q.phi': 'Porosité φ',
+  'porosity.q.sw': 'Saturation en eau volumétrique Sw',
+  'porosity.q.nonWater': 'Part des pores non occupée par l’eau',
+  'porosity.reason.missingInput': 'volume d’eau absent',
+  'porosity.reason.zeroPoreVolume': 'volume poreux nul',
+  'porosity.seg.grain': 'Grains',
+  'porosity.seg.water': 'Eau',
+  'porosity.seg.otherPore': 'Pores non occupés par l’eau',
+  'porosity.seg.pore': 'Pores',
+  'porosity.chart.composition': 'Composition du volume total',
+  'porosity.chart.line': 'Porosité en fonction de la masse volumique globale',
+  'porosity.chart.lineAria':
+    'Droite de la porosité en fonction de ρbulk ; point de calcul : ρbulk = {rho}, φ = {phi}.',
+  'porosity.axis.rhoBulk': 'ρbulk ({unit})',
+  'porosity.axis.phi': 'φ (fraction)',
+  'porosity.assume.sameUnit':
+    'Les trois volumes sont exprimés dans la même unité ; φ et Sw sont des fractions sans dimension.',
+  'porosity.assume.density':
+    'Matrice homogène de masse volumique connue, pores remplis d’un seul fluide de masse volumique connue.',
+  'porosity.warn.zeroPorosity': 'La porosité est nulle : le volume des grains égale le volume total.',
+  'porosity.warn.swNotComputable':
+    'Sw n’est pas calculable : le volume poreux est nul.',
+  'porosity.warn.volumetricSw':
+    'Sw est la saturation volumétrique (eau / volume poreux) : elle est distincte de la saturation déduite des résistivités (loi d’Archie).',
+  'porosity.warn.pores':
+    'La porosité reflète le volume poreux saisi, sans distinguer pores connectés et pores isolés.',
+  'porosity.warn.densityInputs':
+    'La porosité par densités dépend directement des valeurs de ρgrain et ρfluid saisies (hypothèses de matrice et de fluide).',
 } satisfies Record<string, string>
 
 export type MessageKey = keyof typeof fr

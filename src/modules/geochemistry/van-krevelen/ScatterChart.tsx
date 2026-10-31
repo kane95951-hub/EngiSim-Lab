@@ -1,4 +1,4 @@
-import { axisFor, linearScale } from './scale'
+import { axisFor, linearScale } from '../../../utils/scale'
 import type { Sample } from '../rock-eval/samples'
 
 const WIDTH = 640
